@@ -2,6 +2,12 @@ view: order_items {
   sql_table_name: demo_db.order_items ;;
   drill_fields: [id]
 
+  dimension: country {
+    type: string
+    map_layer_name: us_states
+    sql: ${TABLE}.country ;;
+  }
+
   dimension: id {
     primary_key: yes
     type: number
@@ -49,11 +55,6 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
-  dimension: country {
-    type: string
-    map_layer_name: us_states
-    sql: ${TABLE}.country ;;
-  }
 
   measure: count {
     type: count
