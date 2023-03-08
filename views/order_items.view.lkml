@@ -4,7 +4,7 @@ view: order_items {
 
   dimension: country {
     type: string
-    map_layer_name: us_states
+    map_layer_name: countries
     sql: ${TABLE}.country ;;
   }
 
