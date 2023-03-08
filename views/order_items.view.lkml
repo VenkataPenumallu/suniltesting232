@@ -49,6 +49,12 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  dimension: country {
+    type: string
+    map_layer_name: countries
+    sql: ${TABLE}.country ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
